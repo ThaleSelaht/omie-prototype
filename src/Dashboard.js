@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
-// import logo from './logo.svg';
+import React from 'react';
 import 'antd/dist/antd.css';
 import 'ant-design-pro/dist/ant-design-pro.css';
-import './App.css';
 
-class Dashboard extends Component {
+class Dashboard extends React.Component {
   render() {
     return (
       <h1>Dashboard!</h1>
