@@ -1,21 +1,21 @@
 [ {
     "stat": "Mailing ",
-    "count": 434823,
+    "count": 4348,
     "color": "#0e5a7e"
 }, {
     "stat": "Qualificação/agendamento",
-    "count": 356854,
+    "count": 3568,
     "color": "#166f99"
 }, {
     "stat": "Apresentação da parceria",
-    "count": 280022,
+    "count": 2800,
     "color": "#2185b4"
 }, {
     "stat": "Fechamento Parceira",
-    "count": 190374,
+    "count": 1903,
     "color": "#319fd2"
 }, {
     "stat": "Recebimento de carteira de clientes",
-    "count": 120392,
+    "count": 1203,
     "color": "#3eaee2"
 } ]

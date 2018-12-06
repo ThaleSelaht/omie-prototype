@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Draggable } from 'react-beautiful-dnd';
 import { Icon, Row, Col } from 'antd';
+import { BrowserRouter as Link } from 'react-router-dom';
+import { withRouter } from "react-router";
 
 const Container = styled.div`
     border: 1px solid lightgrey;
@@ -16,11 +18,12 @@ class Task extends React.Component {
     return (
         <Draggable draggableId={this.props.task.id} index={this.props.index}>
             {(provided, snapshot) => (
+                <Link to="/lead">        
                 <Container
-                    {...provided.draggableProps}
-                    {...provided.dragHandleProps}
-                    ref={provided.innerRef}
-                    isDragging={snapshot.isDragging}
+                {...provided.draggableProps}
+                {...provided.dragHandleProps}
+                ref={provided.innerRef}
+                isDragging={snapshot.isDragging}
                 >
                     <Row>
                         <Col>
@@ -33,9 +36,10 @@ class Task extends React.Component {
                         </Col>
                     </Row>
                 </Container>
+                </Link>
             )}
         </Draggable>
     );
   }
 }
-export default Task;
+export default withRouter(Task);
