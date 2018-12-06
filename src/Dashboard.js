@@ -9,13 +9,21 @@ import FunnelContainer from './components/FunnelContainer';
 class Dashboard extends React.Component {
   render() {
     return (
+      <div>        
       <Row>
         <Col span={24}>
           <ChartContainer />
-          <DonutContainer />
-          <FunnelContainer/>
+        </Col>        
+      </Row>
+      <Row>
+        <Col span={12}>
+        <DonutContainer />
+        </Col>
+        <Col span={12}>
+        <FunnelContainer/>
         </Col>
       </Row>
+      </div>
     );
   }
 }

@@ -12,23 +12,14 @@ import {
 import data from './funnel-data.json';
 
 const tooltipRender = (({ point = {} }) => (point.category));
-const style = { marginLeft: 5, marginRight: 5 };
 
 class FunnelContainer extends React.Component {
-    state = { dynamicSlope: false, dynamicHeight: false }
+    state = { dynamicSlope: true, dynamicHeight: false }
     render() {
         const { dynamicSlope, dynamicHeight } = this.state;
 
         return (
-          <div>
-            <div className="example-config">
-              <label for="neckRatio">Dynamic Slope
-                <input style={style} type="checkbox" checked={dynamicSlope} onChange={(e) => (this.setState({ dynamicSlope: e.target.checked }))} />
-              </label>
-              <label for="neckRatio">Dynamic Height
-                <input style={style} type="checkbox" checked={dynamicHeight} onChange={(e) => (this.setState({ dynamicHeight: e.target.checked }))} />
-              </label>
-            </div>
+          <div>            
             <Chart style={{ margin: '0 auto', width: 300 }} >
               <ChartTitle text="Funil de vendas" />
               <ChartSeries>

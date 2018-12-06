@@ -29,7 +29,7 @@ const initialData = {
         },
         'column-5': {
             id: 'column-5',
-            title: 'Recebimento de planilha com carteira de clientes',
+            title: 'Recebimento de carteira de clientes',
             taskIds: [], 
         }
     },

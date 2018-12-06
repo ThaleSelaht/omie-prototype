@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import Task from '../Task/';
 
 const Container = styled.div`
-    margin: 8px;
     border: 1px solid lightgrey;
     border-radius: 2px;
     width:20%;
@@ -14,11 +13,12 @@ const Container = styled.div`
 `;
 const Title = styled.h3`
     padding: 8px;
+    font-size: 16px;
 `;
 const TaskList = styled.div`
     padding: 8px;
     transition: background-color 0.2s ease;
-    background-color: ${props => (props.isDraggingOver ? "skyblue" : "white")};
+    background-color: ${props => (props.isDraggingOver ? "#001529" : "white")};
     flex-grow: 1;
     min-height:100px;
 `;

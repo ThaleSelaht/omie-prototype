@@ -1,27 +1,27 @@
 [{
     "name": "2012",
     "data": [{
-      "category": "Asia",
+      "category": "Site (cadastro)",
       "value": 53.8,
       "color": "#9de219"
     }, {
-      "category": "Europe",
+      "category": "Google (ads)",
       "value": 16.1,
       "color": "#90cc38"
     }, {
-      "category": "Latin America",
+      "category": "Facebook",
       "value": 11.3,
       "color": "#068c35"
     }, {
-      "category": "Africa",
+      "category": "Blog",
       "value": 9.6,
       "color": "#006634"
     }, {
-      "category": "Middle East",
+      "category": "Outbound",
       "value": 5.2,
       "color": "#004d38"
     }, {
-      "category": "North America",
+      "category": "Newsletter",
       "value": 3.6,
       "color": "#033939"
     }]

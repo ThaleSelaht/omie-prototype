@@ -1,4 +1,5 @@
 import React from 'react';
+import 'hammerjs';
 import {
     Chart,
     ChartSeries,
@@ -9,27 +10,23 @@ import {
     ChartLegend
 } from '@progress/kendo-react-charts';
 
-const categories = [ 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011 ];
+const categories = [ 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ];
 const series = [ {
-    name: 'India',
-    data: [ 3.907, 7.943, 7.848, 9.284, 9.263, 9.801, 3.890, 8.238, 9.552, 6.855 ]
+    name: 'Consultoria',
+    data: [ 4, 8, 8, 9, 9, 10, 4, 8, 10, 7 ]
 }, {
-    name: 'Russian Federation',
-    data: [ 4.743, 7.295, 7.175, 6.376, 8.153, 8.535, 5.247, -7.832, 4.3, 4.3 ]
+    name: 'Comércio',
+    data: [ 5, 7, 7, 6, 8, 9, 5, 8, 4, 4 ]
 }, {
-    name: 'Germany',
-    data: [ 0.010, -0.375, 1.161, 0.684, 3.7, 3.269, 1.083, -5.127, 3.690, 2.995 ]
-}, {
-    name: 'World',
-    data: [ 1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, -2.245, 4.339, 2.727 ]
-} ];
-
+    name: 'Restaurante',
+    data: [ 0, 0, 1, 1, 4, 3, 10, 5, 4, 20 ]
+},];
 
 class ChartContainer extends React.Component{
     render() {
         return(
             <Chart>
-                <ChartTitle text="Leads por Segmento" />
+                <ChartTitle text="Leads por segmento" />
                 <ChartLegend position="top" orientation="horizontal" />
                 <ChartCategoryAxis>
                     <ChartCategoryAxisItem categories={categories} startAngle={45} />

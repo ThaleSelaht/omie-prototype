@@ -4,13 +4,26 @@ import styled from "styled-components";
 import { DragDropContext } from 'react-beautiful-dnd';
 import initialData from './initial-data';
 import Column from './components/Column';
+import {Select } from 'antd';
 
+/* SELECT*/
+const Option = Select.Option;
+
+function handleChange(value) {
+  if(value === 'Funil Vendas') {
+    console.log(value);    
+  }
+}
+/* FIM SELECT*/
 const Container = styled.div`
   display: flex
 `; 
 class Funil extends React.Component {
   state = initialData;
-
+  handleChange = (value) => {
+    console.log(`selected ${value}`);
+    this.setState(initialData);
+  }
   onDragEnd = result => {
     const { destination, source, draggableId } = result;
 
@@ -71,20 +84,26 @@ class Funil extends React.Component {
   }
   render() {
     return (
+      <div>        
+      <Select defaultValue="Funil Contas" style={{ width: 140 }} onChange={handleChange}>
+        <Option value="Funil Contas">Funil Contas</Option>
+        <Option value="Funil Vendas">Funil Vendas</Option>        
+      </Select>     
       <DragDropContext 
         onDragEnd={this.onDragEnd}
         onDragStart={this.onDragStart}
         onDragUpdate={this.onDragUpdate}
-      >
+        >
         <Container>
         {this.state.columnOrder.map(columnId => {
           const column = this.state.columns[columnId];
           const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
-
+          
           return <Column key={column.id} column={column} tasks={tasks} />;
         })}
         </Container>
       </DragDropContext>
+      </div>
     );
   }
 }
