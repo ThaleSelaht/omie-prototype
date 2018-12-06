@@ -37,7 +37,7 @@ class Column extends React.Component {
             {this.props.column.title}    
             </div>
             <SubTitle>
-                
+            {`R$ 0  [${this.props.column.taskIds.length} Leads]`}    
             </SubTitle>
             </Title>
             <Droppable droppableId={this.props.column.id}>

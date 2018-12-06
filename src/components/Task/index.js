@@ -33,7 +33,7 @@ class Task extends React.Component {
                     </Row>
                     <Row>
                         <Col>
-                        <span>R${this.props.task.price}</span>{this.props.task.segment}
+                            <span>{`R$ ${this.props.task.price} ${this.props.task.segment}`}</span>
                         </Col>
                     </Row>
                 </Container>
