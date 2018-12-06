@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Draggable } from 'react-beautiful-dnd';
+import { Icon, Row, Col } from 'antd';
 
 const Container = styled.div`
     border: 1px solid lightgrey;
@@ -21,7 +22,16 @@ class Task extends React.Component {
                     ref={provided.innerRef}
                     isDragging={snapshot.isDragging}
                 >
-                    {this.props.task.content}
+                    <Row>
+                        <Col>
+                        <Icon type={'user'} />{this.props.task.content}
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                        <span>R${this.props.task.price}</span>{this.props.task.segment}
+                        </Col>
+                    </Row>
                 </Container>
             )}
         </Draggable>

@@ -1,11 +1,21 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import 'ant-design-pro/dist/ant-design-pro.css';
+import '@progress/kendo-theme-default/dist/all.css';
+import { Row, Col } from 'antd';
+import ChartContainer from './components/ChartContainer';
+import DonutContainer from './components/DonutContainer';
+import FunnelContainer from './components/FunnelContainer';
 
 class Dashboard extends React.Component {
   render() {
     return (
-      <h1>Dashboard!</h1>
+      <Row>
+        <Col span={24}>
+          <ChartContainer />
+          <DonutContainer />
+          <FunnelContainer/>
+        </Col>
+      </Row>
     );
   }
 }

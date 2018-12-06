@@ -1,7 +1,5 @@
 import React from 'react';
-// import logo from './logo.svg';
 import 'antd/dist/antd.css';
-import 'ant-design-pro/dist/ant-design-pro.css';
 import { Menu, Icon, Button } from 'antd';
 import { Link } from 'react-router-dom';
 
@@ -19,9 +17,9 @@ class SideBar extends React.Component {
   render() {
     return (
       <div style={{ width: '100%' }}>
-        <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
+        {/* <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
           <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
-        </Button>
+        </Button> */}
         <Menu
           defaultSelectedKeys={['1']}
           defaultOpenKeys={['sub1']}
@@ -30,7 +28,7 @@ class SideBar extends React.Component {
           inlineCollapsed={this.state.collapsed}
         >
           <Menu.Item key="1">
-          <Link to="/dashboard">
+          <Link to="/">
             <Icon type="bar-chart" />
             <span>Dashboard</span>          
           </Link>
@@ -38,7 +36,7 @@ class SideBar extends React.Component {
           <Menu.Item key="2">
           <Link to="/funil">
             <Icon type="filter" />
-            <span>Funis</span>
+            <span>Funil</span>
           </Link>
           </Menu.Item>
           <Menu.Item key="3">
