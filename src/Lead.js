@@ -22,7 +22,7 @@ class Lead extends Component {
   render() {
     return (
       <div className="App">
-      <HeaderBar/>
+        <HeaderBar/>
         <Layout  style={{ padding: '10px 0', background: '#e7e7e7' }}>
           <Sider  style={{ padding: '10px 0', margin:'10px', background: '#e7e7e7' }} width={400} >                      
                 <SiderDetails/>
@@ -34,10 +34,8 @@ class Lead extends Component {
                 <SiderEmaill/>              
           </Sider>
           <Content>
-
-              <TabsCard/>
-              <StepsContents />
-          
+              {/* <TabsCard/> */}
+              <StepsContents />          
           </Content>
         </Layout>     
       </div>

@@ -1,30 +1,19 @@
 import React from 'react';
 import './style.css';
-import { Steps, Icon } from 'antd';
-const Step = Steps.Step;
-
+import { Timeline , Icon } from 'antd';
 
 class StepsContents extends React.Component {
 
   render() {
     return (
-     
-      <Steps direction="vertical" ClassName='steps' current={9} size='small' >
-      <Step title="Finished"  icon={<Icon type="phone" />} description="This is a description.">
-      <p>sadasd asd asdas d asd asd asda sd asd asd asd</p>
-      </Step>
-      <Step title="In Progress" icon={<Icon type="flag" />} description="This is a description." />
-      <Step title="Waiting"  icon={<Icon type="flag" />} description="This is a description." />
-      <Step title="Waiting"  icon={<Icon type="flag" />}  description="This is a description." />
-      <Step title="Waiting"  icon={<Icon type="phone" />} description="This is a description." />
-      <Step title="Waiting"  icon={<Icon type="flag" />} description="This is a description." />
-      <Step title="Waiting"  icon={<Icon type="flag" />}description="This is a description." />
-      <Step title="Waiting"  icon={<Icon type="flag" />} description="This is a description." />
-      <Step title="Waiting"  icon={<Icon type="phone" />} description="This is a description." />
-      
-    </Steps>
-        );
-    }
+      <Timeline style={{background:'#FFF', margin: '10px 10px 0 0'}}>
+        <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+        <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
+        <Timeline.Item dot={<Icon type="clock-circle-o" style={{ fontSize: '16px' }} />} color="red">Technical testing 2015-09-01</Timeline.Item>
+        <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
+      </Timeline>
+    );
+  }
 }
 
 export default StepsContents;
