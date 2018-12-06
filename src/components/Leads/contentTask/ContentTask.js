@@ -1,53 +1,26 @@
 import React from 'react';
 import './style.css';
-import { Card , Icon } from 'antd';
+import { Tabs, Icon } from 'antd';
 
-
-const tabListNoTitle = [{
-  key: 'take note',
-  tab: [<Icon type="file-done" />, 'Take Notes'],
-}, {
-  key: 'add activity',
-  tab: [<Icon type="calendar" />, 'Add activity'],
-}, {
-  key: 'Send Email',
-  tab: [<Icon type="mail" />, 'Send Email'],
-},{
-
-  key: 'Send Email',
-  tab: [<Icon type="paper-clip" />, 'Upload files'],
-
-}];
-
-const contentListNoTitle = {
-
-};
-
+const TabPane = Tabs.TabPane;
 class TabsCard extends React.Component {
-  state = {
-    key: 'tab1',
-    noTitleKey: 'app',
-  }
-
-  onTabChange = (key, type) => {
-    console.log(key, type);
-    this.setState({ [type]: key });
-  }
-
   render() {
-    return (
-     
-        <Card
-          style={{ width: '100%' }}
-          tabList={tabListNoTitle}
-          activeTabKey={this.state.noTitleKey}
-          onTabChange={(key) => { this.onTabChange(key, 'noTitleKey'); }}
-        >
-          {contentListNoTitle[this.state.noTitleKey]}
-        </Card>
-      
-
-        );
+    return (     
+      <Tabs defaultActiveKey="1" style={{ background: '#FFF', padding: 10 }}>
+        <TabPane tab={<span><Icon type="file-text" />Anotações</span>} key="1">
+          Cliquei aqui para fazer anotações...
+        </TabPane>
+        <TabPane tab={<span><Icon type="calendar" />Agende atividade</span>} key="2">
+          Tab 2
+        </TabPane>
+        <TabPane tab={<span><Icon type="mail" />Manda email</span>} key="3">
+          Tab 3
+        </TabPane>
+        <TabPane tab={<span><Icon type="paper-clip" />Arquivos</span>} key="4">
+          Tab 4
+        </TabPane>
+      </Tabs>
+      );
     }
 }
 

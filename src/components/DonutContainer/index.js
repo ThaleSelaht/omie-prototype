@@ -25,6 +25,7 @@ const ChartContainer = () => {
         field="value"
         categoryField="category"
         colorField="color"
+        key={index}
       >
         {
           index === array.length - 1

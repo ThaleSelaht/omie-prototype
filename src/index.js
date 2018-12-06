@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Dashboard from './Dashboard';
 import Funil from './Funil';
+import Funil2 from './Funil2';
 import Fluxo from './Fluxo';
-// import Relatorio from './Relatorio';
+import Relatorio from './Relatorio';
 import Lead from './Lead';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './index.css';
@@ -40,6 +41,7 @@ class App extends React.Component {
   render() {
     return (
         <Router>
+        <div>
         <Layout>
             <Route>
             <Sider
@@ -57,7 +59,7 @@ class App extends React.Component {
                 </Link>
                 </Menu.Item>
                 <Menu.Item key="2">
-                <Link to="/funil">
+                <Link to="/funil/1">
                     <Icon type="filter" />
                     <span>Funil</span>
                 </Link>
@@ -71,7 +73,7 @@ class App extends React.Component {
                 <Menu.Item key="4">
                 <Link to="/relatorio">
                     <Icon type="file-pdf" />
-                    <span>Lead</span>
+                    <span>Relatório</span>
                 </Link>
                 </Menu.Item>
             </Menu>
@@ -106,15 +108,17 @@ class App extends React.Component {
             }}
             >
                 <Switch>
-                    <Route path="/" exact={true} component={Dashboard} />
-                    <Route path="/funil" component={Funil} />
-                    <Route path="/fluxo" component={Fluxo} />
-                    <Route path="/relatorio" component={Lead} />
-                    <Route path="/lead" component={Lead} />
+                <Route path="/" exact={true} component={Dashboard} />
+                <Route path="/funil/1" exact={true} component={Funil} />
+                <Route path="/funil/2" exact={true} component={Funil2} />
+                <Route path="/fluxo" component={Fluxo} />
+                <Route path="/relatorio" component={Relatorio} />
+                <Route path="/lead" component={Lead} />                
                 </Switch>
             </Content>
             </Layout>
         </Layout>
+        </div>
         </Router>
     );
   }

@@ -5,9 +5,9 @@ import SiderPerson from './components/Leads/siderPerson/SiderPerson';
 import TabsCard from './components/Leads/contentTask/ContentTask';
 import StepsContents from './components/Leads/contentSteps/StepsContents';
 import SiderGrafico from './components/Leads/siderGrafico/SiderGrafico';
-import SiderFallowrs from './components/Leads/siderFallowers/SiderFollowers';
+// import SiderFallowrs from './components/Leads/siderFallowers/SiderFollowers';
 import SiderParticipants from './components/Leads/siderParticipants/SiderParticipants';
-import SiderEmaill from './components/Leads/siderEmaill/SiderEmaill';
+// import SiderEmaill from './components/Leads/siderEmaill/SiderEmaill';
 import SiderDetails from './components/Leads/siderDetails/SiderDetails';
 import SiderOrganization from './components/Leads/siderOrganization/SiderOrganization';
 import HeaderBar from './components/Leads/headerBar/HeaderBar';
@@ -30,11 +30,11 @@ class Lead extends Component {
                 <SiderPerson/>
                 <SiderParticipants/>
                 <SiderGrafico/>
-                <SiderFallowrs/>
-                <SiderEmaill/>              
+                {/* <SiderFallowrs/> */}
+                {/* <SiderEmaill/>               */}
           </Sider>
           <Content>
-              {/* <TabsCard/> */}
+              <TabsCard/>
               <StepsContents />          
           </Content>
         </Layout>     

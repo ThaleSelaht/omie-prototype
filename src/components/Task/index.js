@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Draggable } from 'react-beautiful-dnd';
 import { Icon, Row, Col } from 'antd';
-import { BrowserRouter as Link } from 'react-router-dom';
+import { BrowserRouter as Route, Link } from 'react-router-dom';
 import { withRouter } from "react-router";
 
 const Container = styled.div`
@@ -16,15 +16,16 @@ const Container = styled.div`
 class Task extends React.Component {
   render() {
     return (
+        <Link to='/lead'>
         <Draggable draggableId={this.props.task.id} index={this.props.index}>
             {(provided, snapshot) => (
-                <Link to="/lead">        
                 <Container
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}
                 ref={provided.innerRef}
                 isDragging={snapshot.isDragging}
                 >
+                       
                     <Row>
                         <Col>
                         <Icon type={'user'} />{this.props.task.content}
@@ -36,9 +37,9 @@ class Task extends React.Component {
                         </Col>
                     </Row>
                 </Container>
-                </Link>
             )}
         </Draggable>
+        </Link>
     );
   }
 }

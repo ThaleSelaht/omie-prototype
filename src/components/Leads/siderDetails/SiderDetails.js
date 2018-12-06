@@ -9,15 +9,13 @@ class SiderDetails extends React.Component {
     render() {
 
 
-        return ( 
-
+        return (
          <Card
          className="card"
          title="DETAILS"  
-         extra={[<Icon type="edit" />,<Icon type="colum-height" />,<Button size="small" >Customise fields</Button>]}       
-         
+         extra={[<Icon type="edit" />,<Icon type="colum-height" />,<Button size="small" >Customise fields</Button>]} 
+         key="details"      
          >
-
          <Row>
             <Col span={8}>Nome Skype:
             </Col>
@@ -36,15 +34,7 @@ class SiderDetails extends React.Component {
 
             </Col>
             <Col span={8}></Col>            
-    </Row>
-
-        
-
-       
-         
-        
-      
-   
+        </Row> 
         </Card>
 
         );

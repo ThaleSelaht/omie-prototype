@@ -2,19 +2,18 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import styled from "styled-components";
 import { DragDropContext } from 'react-beautiful-dnd';
-import initialData from './initial-data';
+import initialData from './initial-data2';
 import Column from './components/Column';
 import { Select } from 'antd';
 import { BrowserRouter as Route, Link } from 'react-router-dom';
 
 const Option = Select.Option;
-
 function handleChange(value) {}
 
 const Container = styled.div`
   display: flex
 `; 
-class Funil extends React.Component {
+class Funil2 extends React.Component {
   state = initialData;
   handleChange = (value) => {
     console.log(`selected ${value}`);
@@ -81,9 +80,9 @@ class Funil extends React.Component {
   render() {
     return (
       <div>              
-      <Select defaultValue="Funil Contas" style={{ width: 140 }} onChange={handleChange}>
+      <Select defaultValue="Funil Vendas" style={{ width: 140 }} onChange={handleChange}>
         <Option value="Funil Contas"><Link to="/funil/1">Funil Contas</Link></Option>
-        <Option value="Funil Vendas"><Link to="/funil/2">Funil Vendas</Link></Option>         
+        <Option value="Funil Vendas"><Link to="/funil/2">Funil Vendas</Link></Option>        
         </Select>     
         <DragDropContext 
         onDragEnd={this.onDragEnd}
@@ -98,10 +97,10 @@ class Funil extends React.Component {
           return <Column key={column.id} column={column} tasks={tasks} />;
         })}
         </Container>
-      </DragDropContext>
-      </div>
+      </DragDropContext>     
+      </div>   
     );
   }
 }
 
-export default Funil;
+export default Funil2;

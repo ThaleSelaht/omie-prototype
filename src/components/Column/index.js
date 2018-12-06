@@ -5,7 +5,8 @@ import styled from 'styled-components';
 import Task from '../Task/';
 
 const Container = styled.div`
-    border: 1px solid lightgrey;
+    border: 1px;
+    border-color: lighgrey;
     border-radius: 2px;
     width:20%;
     display: flex;
@@ -14,7 +15,11 @@ const Container = styled.div`
 const Title = styled.h3`
     padding: 8px;
     font-size: 16px;
+    -webkit-clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 100%, 0% 100%);
+    background: #CCC;
 `;
+const SubTitle = styled.span``;
 const TaskList = styled.div`
     padding: 8px;
     transition: background-color 0.2s ease;
@@ -27,7 +32,14 @@ class Column extends React.Component {
   render() {
     return (
         <Container>
-            <Title>{this.props.column.title}</Title>
+            <Title>
+            <div>
+            {this.props.column.title}    
+            </div>
+            <SubTitle>
+                
+            </SubTitle>
+            </Title>
             <Droppable droppableId={this.props.column.id}>
             {(provided, snapshot) => (
                 <TaskList
