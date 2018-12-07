@@ -13,13 +13,9 @@ class SideBar extends React.Component {
       collapsed: !this.state.collapsed,
     });
   }
-
   render() {
     return (
       <div style={{ width: '100%' }}>
-        {/* <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
-          <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
-        </Button> */}
         <Menu
           defaultSelectedKeys={['1']}
           defaultOpenKeys={['sub1']}

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Draggable } from 'react-beautiful-dnd';
-import { Icon, Row, Col } from 'antd';
+import { Icon, Row, Col, Tag } from 'antd';
 import { BrowserRouter as Route, Link } from 'react-router-dom';
 import { withRouter } from "react-router";
 
@@ -14,6 +14,19 @@ const Container = styled.div`
 `;
 
 class Task extends React.Component {
+  segmentTag = (segmento) => {
+    let myColor = "";
+    if(segmento === "Consultoria"){
+      myColor = "#CC4F46"
+    } else if (segmento === "Comércio") {
+      myColor = "#CCA838"
+    } else {
+      myColor = "#60A82C"
+    }
+    return (
+      <Tag color={myColor}>{segmento}</Tag>
+    );
+  }
   render() {
     return (
       <Link to='/lead'>
@@ -32,7 +45,7 @@ class Task extends React.Component {
               </Row>
               <Row>
                   <Col>
-                      <span>{`R$ ${this.props.task.price} ${this.props.task.segment}`}</span>
+                      <span>{`R$ ${this.props.task.price} `}{this.segmentTag(this.props.task.segment)}</span>
                   </Col>
               </Row>
             </Container>

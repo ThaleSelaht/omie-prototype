@@ -30,14 +30,13 @@ const TaskList = styled.div`
 
 class Column extends React.Component {
   render() {
-    const myTasksId = this.props.column.taskIds;
-    // const totalPriceColumn = myTasksId.reduce((acc, taskId) => acc + this.props.tasks[0]);
-    const totalPriceColumn = this.props.tasks;
-    // this.props.tasks.map(element => {
-    //   console.log(element.price); 
-    //   return '';     
-    // });
-    
+    const allPriceColumn = this.props.tasks.map(element => {
+      return element.price;     
+    });
+    let totalPriceColumn = 0;
+    if(allPriceColumn.length > 0){
+        totalPriceColumn = allPriceColumn.reduce((acc, currVal) => acc + currVal);
+    }   
     return (
         <Container>
             <Title>
@@ -45,11 +44,7 @@ class Column extends React.Component {
             {this.props.column.title}    
             </div>
             <SubTitle>
-            {`R$ 0  [${this.props.column.taskIds.length} Leads]`}
-            {this.props.tasks.map((element) => {
-              // console.log(element.content); 
-              return '';     
-            })}    
+            {`R$ ${totalPriceColumn} [${this.props.column.taskIds.length} Leads]`}
             </SubTitle>
             </Title>
             <Droppable droppableId={this.props.column.id}>

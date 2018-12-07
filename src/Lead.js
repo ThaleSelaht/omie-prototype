@@ -31,7 +31,7 @@ class Lead extends Component {
                 <SiderParticipants/>
                 <SiderGrafico/>
                 {/* <SiderFallowrs/> */}
-                {/* <SiderEmaill/>               */}
+                {/* <SiderEmaill/> */}
           </Sider>
           <Content>
               <TabsCard/>

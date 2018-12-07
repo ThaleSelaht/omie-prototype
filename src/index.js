@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import Dashboard from './Dashboard';
 import Funil from './Funil';
 import Funil2 from './Funil2';
+import Funil3 from './Funil3';
 import Fluxo from './Fluxo';
 import Relatorio from './Relatorio';
 import Lead from './Lead';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './index.css';
 
-import { Layout, Menu, Icon, Button, Dropdown, Input } from 'antd';
+import { Layout, Menu, Icon, Button, Dropdown, Input, notification, Tag } from 'antd';
 
 const { Header, Sider, Content } = Layout;
 const Search = Input.Search;
@@ -27,7 +28,41 @@ const menu = (
       </Menu.Item>
     </Menu>
 );
+const openNotification = () => {
+    const lead = (
+      <a href="/lead">
+      <div>
+        <div><Icon type={'user'} />Michelangelo</div>
+        <Tag color="#CC4F46">Consultoria</Tag>
+      </div>
+      </a> 
+    );
+    notification.open({
+      message: 'Você tem um novo Lead!',
+      description: lead,
+      style: {
+        width: 600,
+        marginLeft: 335 - 600,
+      },
+      duration: 2
+    });  
+  };
 class App extends React.Component {
+    constructor(props){
+        super(props);
+        this.escFunction = this.escFunction.bind(this);
+    }
+    escFunction(event){
+    if(event.keyCode === 27) {
+        openNotification();
+    }
+    }
+    componentDidMount(){
+    document.addEventListener("keydown", this.escFunction, false);
+    }
+    componentWillUnmount(){
+    document.removeEventListener("keydown", this.escFunction, false);
+    }
   state = {
     collapsed: false,
   };
@@ -109,8 +144,9 @@ class App extends React.Component {
             >
                 <Switch>
                 <Route path="/" exact={true} component={Dashboard} />
-                <Route path="/funil/1" exact={true} component={Funil} />
-                <Route path="/funil/2" exact={true} component={Funil2} />
+                <Route path="/funil/1" exact={true} component={Funil3} />
+                <Route path="/funil/2" exact={true} component={Funil} />
+                <Route path="/funil/3" exact={true} component={Funil2} />
                 <Route path="/fluxo" component={Fluxo} />
                 <Route path="/relatorio" component={Relatorio} />
                 <Route path="/lead" component={Lead} />                

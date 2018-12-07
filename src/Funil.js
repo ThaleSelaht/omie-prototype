@@ -14,11 +14,29 @@ function handleChange(value) {}
 const Container = styled.div`
   display: flex
 `; 
+
 class Funil extends React.Component {
   state = initialData;
   handleChange = (value) => {
     console.log(`selected ${value}`);
     this.setState(initialData);
+  }
+  myTasks = () => {
+    return this.state.columnOrder.map(columnId => {
+      const column = this.state.columns[columnId];
+      const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);        
+      return tasks;
+    });
+  }
+  somaTotal = () => {
+    let myTasks = this.myTasks();
+    let acc = 0;
+    for(let tasksArr of myTasks){
+      for(let task of tasksArr){
+        acc = acc + task.price;
+      }   
+    }   
+    return acc;      
   }
   onDragEnd = result => {
     const { destination, source, draggableId } = result;
@@ -81,10 +99,13 @@ class Funil extends React.Component {
   render() {
     return (
       <div>              
-      <Select defaultValue="Funil Contas" style={{ width: 140 }} onChange={handleChange}>
-        <Option value="Funil Contas"><Link to="/funil/1">Funil Contas</Link></Option>
-        <Option value="Funil Vendas"><Link to="/funil/2">Funil Vendas</Link></Option>         
-        </Select>     
+        <Select defaultValue="Funil Contas" style={{ width: 140 }} onChange={handleChange}>
+        <Option value="Funil Inbound"><Link to="/funil/1">Funil Inbound</Link></Option>         
+        <Option value="Funil Contas"><Link to="/funil/2">Funil Contas</Link></Option>
+        <Option value="Funil Vendas"><Link to="/funil/3">Funil Vendas</Link></Option>
+        </Select>
+        <b>{`  R$ ${this.somaTotal()} [${Object.keys(this.state.tasks).length} Leads]`}</b>
+   
         <DragDropContext 
         onDragEnd={this.onDragEnd}
         onDragStart={this.onDragStart}
@@ -93,12 +114,10 @@ class Funil extends React.Component {
         <Container>
         {this.state.columnOrder.map(columnId => {
           const column = this.state.columns[columnId];
-          const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
-          console.log(tasks);
-          
+          const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);        
           return <Column key={column.id} column={column} tasks={tasks} />;
         })}
-        </Container>
+        </Container>        
       </DragDropContext>
       </div>
     );

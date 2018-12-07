@@ -1,6 +1,7 @@
 {
   "name": "omie-prototype",
   "version": "0.1.0",
+  "homepage": "https://ThaleSelaht.github.io/omie-prototype/",
   "private": true,
   "workspaces": [
     "packages/*"
@@ -14,10 +15,13 @@
     "@progress/kendo-react-grid": "^2.4.0",
     "@progress/kendo-react-inputs": "^2.4.0",
     "@progress/kendo-react-intl": "^2.4.0",
+    "@progress/kendo-react-pdf": "^2.4.0",
     "@progress/kendo-theme-default": "^2.61.0",
     "@types/node": "^10.12.12",
     "antd": "^3.11.0",
     "canvasjs": "^1.8.1",
+    "firebase": "^5.7.0",
+    "gh-pages": "^2.0.1",
     "hammerjs": "^2.0.8",
     "react": "^16.6.3",
     "react-beautiful-dnd": "^10.0.2",
@@ -31,7 +35,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

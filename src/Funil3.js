@@ -2,7 +2,7 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import styled from "styled-components";
 import { DragDropContext } from 'react-beautiful-dnd';
-import initialData from './initial-data2';
+import initialData from './initial-data3';
 import Column from './components/Column';
 import { Select } from 'antd';
 import { BrowserRouter as Route, Link } from 'react-router-dom';
@@ -13,7 +13,7 @@ function handleChange(value) {}
 const Container = styled.div`
   display: flex
 `; 
-class Funil2 extends React.Component {
+class Funil3 extends React.Component {
   state = initialData;
   handleChange = (value) => {
     console.log(`selected ${value}`);
@@ -97,7 +97,7 @@ class Funil2 extends React.Component {
   render() {
     return (
       <div>              
-        <Select defaultValue="Funil Vendas" style={{ width: 140 }} onChange={handleChange}>
+        <Select defaultValue="Funil Inbound" style={{ width: 140 }} onChange={handleChange}>
         <Option value="Funil Inbound"><Link to="/funil/1">Funil Inbound</Link></Option>         
         <Option value="Funil Contas"><Link to="/funil/2">Funil Contas</Link></Option>
         <Option value="Funil Vendas"><Link to="/funil/3">Funil Vendas</Link></Option>       
@@ -122,4 +122,4 @@ class Funil2 extends React.Component {
   }
 }
 
-export default Funil2;
+export default Funil3;
