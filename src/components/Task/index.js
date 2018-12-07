@@ -16,30 +16,29 @@ const Container = styled.div`
 class Task extends React.Component {
   render() {
     return (
-        <Link to='/lead'>
-        <Draggable draggableId={this.props.task.id} index={this.props.index}>
-            {(provided, snapshot) => (
-                <Container
-                {...provided.draggableProps}
-                {...provided.dragHandleProps}
-                ref={provided.innerRef}
-                isDragging={snapshot.isDragging}
-                >
-                       
-                    <Row>
-                        <Col>
-                        <Icon type={'user'} />{this.props.task.content}
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <span>{`R$ ${this.props.task.price} ${this.props.task.segment}`}</span>
-                        </Col>
-                    </Row>
-                </Container>
-            )}
-        </Draggable>
-        </Link>
+      <Link to='/lead'>
+      <Draggable draggableId={this.props.task.id} index={this.props.index}>
+          {(provided, snapshot) => (
+            <Container
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            ref={provided.innerRef}
+            isDragging={snapshot.isDragging}
+            >                       
+              <Row>
+                  <Col>
+                  <Icon type={'user'} />{`  ${this.props.task.content}`}
+                  </Col>
+              </Row>
+              <Row>
+                  <Col>
+                      <span>{`R$ ${this.props.task.price} ${this.props.task.segment}`}</span>
+                  </Col>
+              </Row>
+            </Container>
+          )}
+      </Draggable>
+      </Link>
     );
   }
 }
